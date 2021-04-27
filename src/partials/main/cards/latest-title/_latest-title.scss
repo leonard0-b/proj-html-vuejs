@@ -1,0 +1,18 @@
+.latest {
+  margin-bottom: 100px;
+  .intro-title {
+    margin-bottom: 50px;
+    h1 {
+      @include titleSection;
+    }
+    span {
+      @include titleHr;
+    }
+  }
+}
+
+@media all and (max-width: 567px) {
+  .latest {
+    margin-bottom: 50px;
+  }
+}

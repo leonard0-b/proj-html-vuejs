@@ -1,0 +1,82 @@
+@mixin buttonPrim {
+  padding: 10px 15px;
+  text-transform: uppercase;
+  background-color: $primarycol;
+  color: $secondarycol;
+}
+
+@mixin buttonSec {
+  padding: 10px 15px;
+  text-transform: uppercase;
+  background-color: $mainbackground;
+  color: $secondarycol;
+}
+
+@mixin buttonPrimBig{
+  padding: 10px 35px;
+  text-transform: uppercase;
+  background-color: $primarycol;
+  color: $secondarycol;
+  font-weight: 600;
+}
+
+@mixin buttonSecBig {
+  padding: 10px 25px;
+  text-transform: uppercase;
+  background-color: $mainbackground;
+  color: $secondarycol;
+  font-weight: 600;
+}
+
+@mixin subTitleSection {
+  text-transform: uppercase;
+  color: $subtitlesection;
+  letter-spacing: 5px;
+  font-size: 12px;
+}
+
+@mixin titleSection {
+  font-size: $maintitle;
+  margin: 20px 0;
+}
+
+@mixin titleHr {
+  background-color: $titlehr;
+  width: 70px;
+  height: 2px;
+  display: block;
+  margin: 0 auto;
+}
+
+@mixin card {
+  .card-title {
+    margin-top: 5px;
+    h3 {
+      font-size: $cardtitle;
+      color: $primarycol;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        color: $mainbackground;
+      }
+    }
+    p {
+      font-size: $xsmall;
+      color: $cardtext;
+      display: inline;
+    }
+    span {
+      font-size: $xsmall;
+      cursor: pointer;
+    }
+  }
+  .card-text {
+    margin-top: 10px;
+    p {
+      font-size: $small;
+      color: $cardtext;
+      line-height: 20px;
+      font-weight: 500;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.join {
+  background-image: url(./../../assets/img/join_now_cta_bg.jpg);
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  .join-text {
+    text-align: center;
+    padding: 0 250px;
+    h1 {
+      font-size: 80px;
+
+    }
+  }
+}
+.join-btn {
+  margin-top: 50px;
+  a {
+    @include buttonSec;
+    transition: 0.3s;
+    &:hover {
+      background-color: rgba($color: $mainbackground, $alpha: 0.8);
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .join .join-text {
+    padding: 0;
+  }
+
+  .forum .container {
+    width: 90%;
+  }
+}

@@ -1,0 +1,41 @@
+.cards {
+  margin: 0 -10px;
+  margin-bottom: 50px;
+}
+
+.card {
+  .card-img {
+    font-size: 0;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      transition: 1s;
+      transform: scale(1.12);
+      &:hover {
+        transform: scale(1);
+      }
+    }
+  }
+  .card-content {
+    @include card;
+  }  
+}
+
+@media all and (max-width: 768px) {
+  .latest > .container {
+    width: 90%;
+  }
+
+  .cards {
+    flex-wrap: wrap;
+    margin: 20px -10px;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,74 @@
+.jumbotron {
+  height: 520px;
+  max-width: 1920px;
+  margin: 0 auto;
+  margin-top: 80px;
+  background-image: url(./../../assets/img/home_slider_bg.jpg);
+  background-position: center;
+  background-size: cover;
+  align-items: center;
+}
+
+.title {
+  h1 {
+    color: $secondarycol;
+    font-size: $jumbo;
+  }  
+}
+
+.subtitle {
+  p {
+    font-size: $normal;
+    color: $secondarycol;
+    font-weight: $thin;
+  }
+}
+
+.jumbo-btn {
+  display: inline-block;
+  a {
+    @include buttonSecBig;
+    transition: 0.3s;
+    i {
+      color: $secondarycol;
+      font-size: 14px;
+      align-content: center;
+    }
+    &:hover {
+      background-color: rgba($color: $mainbackground, $alpha: 0.8);
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .title h1 {
+    font-size: 70px;
+  }
+}
+
+
+@media all and (max-width: 576px) {
+  .title h1 {
+    font-size: 45px;
+  }
+
+  .subtitle p {
+    font-size: 14px;
+  }
+
+  .jumbo-btn a {
+    font-size: 12px;
+    padding: 7px 15px;
+  }
+
+  .jumbotron {
+    height: 250px;
+  }
+}
+
+@media all and (max-width: 350px) {
+  .title h1 {
+    font-size: 40px;
+  }
+}
+

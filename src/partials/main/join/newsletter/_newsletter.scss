@@ -1,0 +1,35 @@
+.newsletter {
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+.newsletter-text {
+  margin-bottom: 30px;
+  h2 {
+    padding-top: 70px;
+    font-weight: 600;
+  }
+}
+
+.form {
+  padding-bottom: 75px;
+  input {
+    padding: 15px 10px;
+    width: 35%;
+    outline: 0;
+  }
+  button {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 15px 70px;
+    text-transform: uppercase;
+    color: $secondarycol;
+    background-color: black;
+    outline: 0;
+    transition: 0.3s;
+    &:hover {
+      background-color: rgba($color: #000000, $alpha: 0.8);
+    }
+  }
+}
+

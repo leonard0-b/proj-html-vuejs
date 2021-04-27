@@ -1,0 +1,39 @@
+.module {
+  text-align: center;
+  background-color: #fff;
+  border-top: 3px solid $mainbackground;
+  margin-bottom: 40px;
+  .icon {
+    padding-top: 50px;
+    i {
+      font-size: $moduleicons;
+      border-radius: 50%;
+      color: $secondarycol;
+      padding: 15px;
+      background-color: $modulecircle;
+      transform: scale(1);
+      transition: 0.3s;
+      cursor: pointer;
+      &:hover {
+        transform: scale(0.9);
+      }
+    }
+  }
+  .title {
+    padding-bottom: 50px;
+    a {
+      h3 {
+        color: $primarycol;
+        padding-top: 20px;
+        transition: 0.3s;
+        &:hover {
+          color: $mainbackground;
+        }
+      }  
+    }
+  }
+}
+
+.small {
+  padding: 15px 18px !important;
+}

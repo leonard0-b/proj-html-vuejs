@@ -1,0 +1,220 @@
+footer {
+  margin-top: 50px;
+  background-color: #fff;
+  position: relative;
+
+}
+
+.col {
+  ul {
+    li {
+      a {
+        color: $primarycol;
+        font-size: $small;
+        line-height: 25px;
+        font-weight: 600;
+        transition: 0.3s;
+        &:hover {
+          color: $mainbackground;
+        }
+        &:first-child {
+          color: $primarycol;
+          text-transform: uppercase;
+          font-size: 17px;
+        }
+      }
+      p {
+        font-size: $small;
+        color: #62676c;
+        line-height: 25px;
+        transition: 0.3s;
+      }
+    }
+  }
+}
+
+.container.footer-copyright{
+  margin-top: 70px;
+  padding-bottom: 30px;
+  align-items: center;
+  .copyright {
+    display: inline-block;
+    font-size: $small;
+    p {
+      color: #62676c;
+      a {
+        span {
+          color: #000;
+          font-weight: 600;  
+        }
+      }
+      span {
+        color: #000;
+        font-weight: 600;
+      }
+      i {
+        color: purple;
+      }
+    }
+  }
+}
+
+.social {
+  margin-left: auto;
+  .social-icon {
+    margin: 0 5px;
+    position: relative;
+    &:hover .icon-name {
+      display: block;
+      opacity: 1;
+    }
+    i {
+      text-align: center;
+      padding: 15px 15px;
+      opacity: 1;
+      transition: 0.3s;
+      &:hover {
+        opacity: 0.8;
+      }
+      &.fa-facebook-f {
+        border-radius: 50%;
+        background-color: $facebook;
+        color: #fff;
+        padding: 15px 18px;
+      }
+      &.fa-twitter {
+        border-radius: 50%;
+        background-color: $twitter;
+        color: #fff;
+      }
+      &.fa-instagram {
+        border-radius: 50%;
+        padding: 15px 16px;
+        background-color: $instagram;
+        color: #fff;
+      }
+      &.fa-youtube {
+        border-radius: 50%;
+        background-color: $youtube;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.icon-name {
+  position: absolute;
+  top: -30px;
+  left: -10px;
+  align-items: center;
+  border-radius: 3px;
+  padding: 4px 6px;
+  text-align: center;
+  background-color: #3b3d3f;
+  display: none;
+  opacity: 0;
+  transition: 0.3s;
+  &.Facebook {
+    left: -11px;
+  }
+  &.Twitter {
+    left: -4px;
+  }
+  &.Youtube {
+    left: -5px;
+  }
+  &.Instagram {
+    left: -12px;
+  }
+  span {
+    font-size: $xsmall;
+    color: #fff;
+    display: block;
+  }
+}
+
+.footer-label {
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 35px;
+  background-color: #474747;
+  border-radius: 6px 6px 0 0;
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    background-color: $mainbackground;
+  }
+  i {
+    font-size: 18px;
+    color: #fff;
+  }
+}
+
+@media all and (max-width: 768px) {
+  footer .container {
+    width: 90%;
+    flex-wrap: wrap;
+  }
+
+  .container.footer-copyright .copyright p {
+    font-size: 8px;
+  }
+
+  .container.footer-copyright {
+    margin-top: 50px;
+  }
+
+  .footer-label {
+    left: 50px;
+    height: 25px;
+    width: 35px;
+  }
+}
+
+@media all and (max-width: 567px) {
+  footer {
+    margin-top: 20px;
+  }
+
+  .join {
+    height: 260px;
+  }
+
+  .join .join-text h1 {
+    font-size: 33px;
+  }
+
+  .subtitle p {
+    font: 11px;
+  }
+
+  .join-btn {
+    margin-top: 5px;
+    a {
+      font-size: 12px;
+    }
+  }
+
+  .form button {
+    padding: 15px 20px;
+  }
+
+  .form input {
+    width: 60%;
+    margin-right: 5px;
+    border: 0.5px solid black;
+  }
+
+  .w-25footer {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .container.footer-copyright .copyright {
+    width: 30%;
+  }
+}

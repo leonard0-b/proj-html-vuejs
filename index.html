@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="./assets/img/favicon.jpg"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./assets/css/master.css">
+	<title>FORUM - Non il programma :(</title>
+</head>
+<body>
+	<div id="root">
+		<header id="nav">
+			<nav>
+				<div class="container flex">
+					<!-- nav-left -->
+					<div class="nav-left">
+						<img :src="logo" alt="logo">
+					</div>
+					<!-- nav-right -->
+					<div class="nav-right flex">
+						<ul class="flex">
+							<li class="ml-20 mr-20 flex" v-for="list in navBar"><a :href="list.link" target="_blank">{{list.label}}</a><span class="triangle" :class="list.class"></span></li>
+							<li class="ml-20 mr-20 flex"><a class="btn-nav" href="https://i.imgur.com/wrv4Ngp.jpeg" target="_blank">join us</a></li>
+							<li class="ml-20 mr-20 flex"><i class="fas fa-search"></i></li>
+						</ul>
+					</div>
+					<div class="hamburger" @click="showMobile">
+						<div class="line"></div>
+						<div class="line"></div>
+						<div class="line"></div>
+					</div>
+				</div>						
+			</nav>
+			<!-- NAV-MOBILE -->
+			<div v-if="open" class="nav-mobile">
+				<div class="container">
+					<ul>
+						<li class="" v-for="list in navBar"><a :href="list.link" target="_blank">{{list.label}}</a></li>
+						<li class=""><a class="btn-nav-mobile ml-10" href="https://i.imgur.com/wrv4Ngp.jpeg" target="_blank">join us</a></li>
+						<li class=""><input v-if="search" type="text" placeholder="Search*" class="ml-10"><i class="fas fa-search pl-10" v-if="!search" @click="search = true" ></i><i v-if="search" class="fas fa-times" @click="search = false"></i></li>
+					</ul>	
+				</div>
+			</div>
+			<!-- jumbo -->
+			<div class="jumbotron flex">
+				<div class="container">
+					<div class="jumbo-contain">
+						<div class="title mb-20">
+							<h1>Tech Forum!</h1>
+						</div>
+						<div class="subtitle mb-20">
+							<p>Discuss all the latest technology news and trends</p>
+						</div>
+						<div class="jumbo-btn mt-10">
+							<a class="btn-jumbo" href="https://i.imgur.com/wrv4Ngp.jpeg" target="_blank">Get Avada Now!<i class="fas fa-angle-right pl-10"></i></a>
+						</div>		
+					</div>
+				</div>
+			</div>
+		</header>
+		<main>
+			<!-- inizio titolo main -->
+			<section class="intro">
+				<div class="intro-title mb-20">
+					<h3>avada forum is the place to be</h3>
+				</div>
+				<div class="intro-text">
+					<p>In quis lectus sed leo elementum faucibus in dapibus dictum.</p>
+					<p>Nulla molestie tortor nec lectus venenatis, sed blandit dui finibus.</p>
+					<p>Dolor at, bibendum purus. Donec vehicula nec tortor ac finubus.</p>
+				</div>
+			</section>
+			<!-- sezione latest -->
+			<section class="latest">
+				<div class="intro-title">
+					<h3>phasellus eget metus</h3>
+					<h1>All the latest news</h1>
+					<span></span>
+				</div>
+				<div class="container">
+					<!-- cards top-->
+					<div class="cards flex">
+						<div v-for="card in cardLatestTop"class="card w-33 mr-10 ml-10">
+							<div class="card-img">
+								<img :src="card.img" alt="immagini tech">
+							</div>
+							<div class="card-content">
+								<div class="card-title">
+									<h3>{{card.title}}</h3>
+									<p>{{card.date}}</p>
+									<span v-if="(card.comments != 'Comments off')" style="color: #000;">| {{card.comments}}</span>
+									<span v-else="(card.comments === 'Comments off'" style="color: #62676c;">| {{card.comments}}</span>
+								</div>
+								<div class="card-text">
+									<p>{{card.text}}</p>
+								</div>
+							</div>	
+						</div>
+					</div>
+					<!-- card main -->
+					<div class="card-big w-100 flex">
+						<div class="card-big-text">
+							<h3>featured article</h3>
+							<h1>Cras malesuada et orci eget pharetra</h1>
+							<p>In quis lectus sed leo elementum faucibus in dapibus dictum. Nulla molestie tortor nec lectus venenatis, sed blandit dui finibus. Nulla molestie tortor nec lectus venenati, sed blandit dui finibus.</p>
+						</div>
+						<div class="card-big-btn">
+							<a href="https://i.imgur.com/wrv4Ngp.jpeg" target="_blank">read more!<i class="fas fa-angle-right pl-10"></i></a>
+						</div>	
+					</div>
+					<!-- card bottom -->
+					<div class="cards flex">
+						<div v-for="card in cardLatestBottom"class="card w-33 mr-10 ml-10">
+							<div class="card-img">
+								<img :src="card.img" alt="immagini tech">
+							</div>
+							<div class="card-content">
+								<div class="card-title">
+									<h3>{{card.title}}</h3>
+									<p>{{card.date}}</p>
+									<span v-if="(card.comments != 'Comments off')" style="color: #000;">| {{card.comments}}</span>
+									<span v-else="(card.comments === 'Comments off'" style="color: #62676c;">| {{card.comments}}</span>
+								</div>
+								<div class="card-text">
+									<p>{{card.text}}</p>
+								</div>
+							</div>	
+						</div>
+					</div>
+					<div class="cards flex">
+						<div class="card w-65 mr-10 ml-10">
+							<div class="card-big-text">
+								<h3>reviewed product</h3>
+								<h1>Mauris viverra atisan ipsum eget felis prims efficitur varius</h1>
+								<p>In quis lectus sed leo elementum faucibus in dapibus dictum. Nulla molestie tortor nec lectus venenatis, sed blandit dui finibus. Nulla molestie tortor nec lectus venenatis, sed blandit dui finibus.</p>
+							</div>
+							<div class="card-big-btn">
+								<a href="https://i.imgur.com/wrv4Ngp.jpeg" target="_blank">read more!<i class="fas fa-angle-right pl-10"></i></a>
+							</div>
+						</div>
+						<div class="card w-35 flex mr-10 ml-10 pl-5">
+							<div class="card-title">
+								<h1>Tutorials & Guides</h1>
+								<span></span>			
+							</div>
+							<div v-for="mini in miniCards" class="card-mini mt-20 flex">
+								<div class="mini-img w-35 mr-5 ml-5">
+									<img :src="mini.img" alt="">
+								</div>
+								<div class="mini w-65 mr-5 ml-5">
+									<h5>{{mini.title}}</h5>
+									<p>{{mini.date}}</p>
+									<span v-if="(mini.comments != 'Comments off')" style="color: #000;">| {{mini.comments}}</span>
+									<span v-else="(mini.comments === 'Comments off'" style="color: #62676c;">| {{mini.comments}}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- sezione forum -->
+			<section class="forum">
+				<div class="black-banner">
+					<a href="https://i.imgur.com/wrv4Ngp.jpeg" target="_blank"><h4>read our blog </h4><i class="fas fa-long-arrow-alt-right"></i></a>
+				</div>
+				<div class="container">
+					<div class="intro-title">
+						<h3>phasellus eget metus</h3>
+						<h1>Forum Sections</h1>
+						<span></span>
+					</div>
+					<!-- modules -->
+					<div class="wrapper flex">
+						<div class="module ml-20 mr-20 w-25" v-for="module in modules">
+							<div class="icon">
+								<i :class="module.icon"></i>
+							</div>
+							<div class="title">
+								<a :href="module.link" target="_blank"><h3>{{module.title}}</h3></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="black-banner">
+					<a href="https://i.imgur.com/wrv4Ngp.jpeg" target="_blank"><h4>go to our forum</h4><i class="fas fa-long-arrow-alt-right"></i></a>
+				</div>	
+			</section>
+			<!-- sezione join our community -->
+			<section class="join flex">
+				<div class="container">
+					<div class="join-text">
+						<div class="title mb-20">
+							<h1>Hei! Join to our Community</h1>
+						</div>
+						<div class="subtitle mb-20">
+							<p>Nulla molestie tortor nec lectus venenatis, sed blandit dui finibus. Dolor at, bibendum purus. Donec vehicula nec torto ac finubus.</p>
+						</div>
+						<div class="join-btn">
+							<a class="btn-join" href="https://i.imgur.com/wrv4Ngp.jpeg" target="_blank">Sign Up<i class="fas fa-angle-right pl-10"></i></a>
+						</div>		
+					</div>	
+				</div>
+			</section>
+			<!-- sezione newsletter -->
+			<section class="newsletter">
+				<div class="container">
+					<div class="newsletter-text">
+						<h2>Subscribe to our Newsletter</h2>
+					</div>
+					<div class="form">
+						<input type="text" placeholder="Insert your email*" class="mr-15">
+						<button>send</button>
+					</div>
+				</div>	
+			</section>
+		</main>
+		<!-- footer -->
+		<footer>
+			<div class="container flex">
+				<div class="col w-25footer mr-15 ml-15">
+					<ul>
+						<li v-for="list in footerCol1" class="mb-15"><a :href="list.link" target="_blank">{{list.title}}</a></li>
+						<li v-for="listTwo in footerCol1"><p>{{listTwo.text}}</p></li>
+					</ul>
+				</div>
+				<div class="col w-25footer mr-15 ml-15">
+					<ul>
+						<li v-for="list in footerCol2" class="mb-15"><a :href="list.link" target="_blank">{{list.title}}</a></li>
+						<li v-for="listTwo in footerCol2" class="mb-10 flex"><p><i class="fas fa-angle-right mr-5"></i></p><a :href="listTwo.link" target="_blank">{{listTwo.text}}</a></li>
+					</ul>
+				</div>
+				<div class="col w-25footer mr-15 ml-15">
+					<ul>
+						<li v-for="list in footerCol3" class="mb-15"><a :href="list.link" target="_blank">{{list.title}}</a></li>
+						<li v-for="listTwo in footerCol3" class="mb-10 flex"><p><i class="fas fa-angle-right mr-5"></i></p><a :href="listTwo.link" target="_blank">{{listTwo.text}}</a></li>
+					</ul>
+				</div>
+				<div class="col w-25footer mr-15 ml-15">
+					<ul>
+						<li v-for="list in footerCol4" class="mb-15"><a :href="list.link" target="_blank">{{list.title}}</a></li>
+						<li v-for="listTwo in footerCol4" class="mb-10 flex"><p><i class="fas fa-angle-right mr-5"></i></p><a :href="listTwo.link" target="_blank"></i>{{listTwo.text}}</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="container footer-copyright flex">
+				<div class="copyright">
+					<p>&copy Copyright 2012 - 2020 | Avada Theme by <span>Theme Fusion</span> | All Rights Reserved | Powered by <a href="https://www.instagram.com/p/BsGs7zagf1d/" target="_blank"><span>Leonardo</span></a><i class="fas fa-heart ml-5"></i></p>
+				</div>
+				<div class="social flex">
+					<div class="social-icon" v-for="icon in iconsFooter">
+						<a :href="icon.link" target="_blank"><i :class="icon.class"></i></a>
+						<div class="icon-name flex" :class="icon.name">
+							<span>{{icon.name}}</span>
+						</div>		
+					</div>
+				</div>
+				<div class="footer-label flex">
+					<a href="#nav"><i class="fas fa-angle-up"></i></a>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<!-- script di vue -->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="./assets/js/main.js" charset="utf-8"></script> 
+</body>
+</html>

@@ -1,0 +1,20 @@
+.black-banner {
+  text-align: center;
+  background-color: $primarycol;
+  padding: 40px 0;
+  transition: 0.3s;
+  &:hover {
+    background-color: $mainbackground;
+  }
+  a {
+    h4 {
+      display: inline;
+      text-transform: uppercase;
+      color: $secondarycol;
+    }
+    i {
+      color: $secondarycol;
+      margin-left: 5px;  
+    }  
+  }
+}
